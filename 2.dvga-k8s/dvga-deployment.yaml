@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dvga-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: dvga
+  template:
+    metadata:
+      labels:
+        component: dvga
+    spec:
+      containers:
+        - name: dvga
+          image: navidahm3d/dvga
+          ports:
+            - containerPort: 80
+          env:
+            - name: WEB_HOST
+              value: "0.0.0.0"
+            - name: WEB_PORT
+              value: "80"

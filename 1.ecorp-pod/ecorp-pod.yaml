@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ecorp-pod
+  labels:
+    component: ecorp-pod
+spec:
+  containers:
+    - name: ecorp
+      image: navidahm3d/ecorp
+      ports:
+        - containerPort: 80

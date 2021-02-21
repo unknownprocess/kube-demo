@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dvga-service
+spec:
+  type: ClusterIP
+  selector:
+    component: dvga
+  ports:
+    - port: 80
+      targetPort: 80
